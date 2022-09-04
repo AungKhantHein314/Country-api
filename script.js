@@ -34,17 +34,30 @@ const api = "https://restcountries.com/v3.1/all";
 
 fetch(api)
   .then(response => response.json())
-  .then(data => getData(data));
+  .then(data => setData(data));
+
+let dataArray = [];
+function getSearchInput() {
+  let toSearch = searchInput.value.toLowerCase();
+  let newArray = [];
+  if(toSearch != "") {
+    countriesBox.innerHTML = "";
+    newArray = dataArray.filter(country => country.name.common.toLowerCase().includes(toSearch));
+  } else {
+    newArray = dataArray;
+  }
+  displayCountries(newArray);
+}
 
 // getData with functions from this getData function
-function getData(data) {
-  displayCountries(data);
+function setData(data) {
+  dataArray = data;
+  getSearchInput();
 }
 
 // display countries
 function displayCountries(countries) {
   for(let country of countries) {
-    console.log(country);
       countriesBox.insertAdjacentHTML("beforeend",
       `<div class="country">
         <a href="./detail.html?name=${generateName(country)}" onclick="setHistory()"><img src="${country.flags.png}" alt="flag" /></a>
