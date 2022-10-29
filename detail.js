@@ -13,6 +13,7 @@ function displayCountry(country) {
     "beforeend",
     `
     <div class="selection">
+
     <button onclick="backFunc()"><i class="fa-solid fa-arrow-left"></i> BACK</button>
     <div id="selection-box">
       <img src="${country.flags.svg}" alt="${country.name.common}" />
@@ -48,6 +49,7 @@ function displayCountry(country) {
     `
   );
   loadingWrapper.remove();
+
 }
 
 function backFunc() {
@@ -99,7 +101,9 @@ function generateBorderCountries(borders) {
   let borderButtons = "";
   for (let border of borders) {
     borderButtons += `
+
         <a href="./detail.html?name=${border}" onclick="setSessionStorage('History')">${border}</a>
+
         `;
   }
   return borderButtons;

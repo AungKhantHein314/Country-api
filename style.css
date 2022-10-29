@@ -28,12 +28,15 @@ body {
   cursor: pointer;
 }
 
-#solid-moon,
 #empty-moon {
   font-size: 20px;
+  transition: 0.4s all ease-in;
+  display: inline-block;
 }
 
 #solid-moon {
+  font-size: 20px;
+  transition: 0.4s all ease-in;
   display: none;
 }
 
@@ -129,7 +132,6 @@ body {
 }
 
 #countries-box {
-  /* border: 2px solid; */
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -137,7 +139,6 @@ body {
 }
 
 .country {
-  /* border: solid 1px red; */
   margin-bottom: 30px;
   border-radius: 5px;
   padding-bottom: 30px;
@@ -151,7 +152,9 @@ body {
   height: 213px;
   width: 320px;
 }
+
 /* for loading start  */
+
 .loadingWrapper {
   position: absolute;
   top: 50%;
@@ -159,7 +162,6 @@ body {
   width: 142px;
   height: 40px;
   margin: -20px 0 0 -71px;
-  background: white;
   filter: contrast(20);
 }
 
@@ -240,7 +242,7 @@ body {
   color: #1e201f;
   box-shadow: rgb(0 0 0 / 3%) 0px 2px 4px 4px;
   border-radius: 3px;
-  margin: 40px 0 40px 50px;
+  margin: 0 0 40px 50px;
   cursor: pointer;
 }
 
